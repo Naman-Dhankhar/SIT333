@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="0"/>
+	<list key="CommitDialog.authorValues">
+		<item value="Naman-Dhankhar &lt;naman4795.be23@chitkara.edu.in&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="Naman-Dhankhar &lt;naman4795.be23@chitkara.edu.in&gt;"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/Naman-Dhankhar/SIT333.git"/>
+	</list>
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="/Users/namandhankhar/Uni/Deakin/T1 2026/SIT333 Software Testing/SIT333 GIT/.git">
+			<item value="false"/>
+			<item value="Naman-Dhankhar &lt;naman4795.be23@chitkara.edu.in&gt;"/>
+			<item value="Merge branch &apos;main&apos; of https://github.com/Naman-Dhankhar/SIT333.git into main"/>
+			<item value="Naman-Dhankhar &lt;naman4795.be23@chitkara.edu.in&gt;"/>
+			<item value="4366dfca299a627433311bd33e20b423935e3ba0"/>
+			<item value="0"/>
+			<item value="false"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="307"/>
+		<item key="DIALOG_Y_ORIGIN" value="30"/>
+		<item key="DIALOG_WIDTH" value="650"/>
+		<item key="DIALOG_HEIGHT" value="445"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		<list key="sashWeights">
+			<item value="600"/>
+			<item value="400"/>
+		</list>
+	</section>
+	<section name="GitImportWizard">
+		<section name="GitImportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="339"/>
+			<item key="DIALOG_Y_ORIGIN" value="3"/>
+			<item key="DIALOG_WIDTH" value="652"/>
+			<item key="DIALOG_HEIGHT" value="550"/>
+			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		</section>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="322"/>
+		<item key="DIALOG_Y_ORIGIN" value="83"/>
+		<item key="DIALOG_WIDTH" value="620"/>
+		<item key="DIALOG_HEIGHT" value="365"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+</section>

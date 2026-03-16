@@ -1,0 +1,57 @@
+package sit707_week2;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumOperations {
+
+	public static void sleep(int sec) {
+		try {
+			Thread.sleep(sec * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void officeworks_registration_page(String url) {
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+
+		WebDriver driver = new ChromeDriver();
+
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		driver.get(url);
+		sleep(2);
+
+		driver.findElement(By.id("firstname")).sendKeys("Naman");
+		sleep(1);
+
+		driver.findElement(By.id("lastname")).sendKeys("Dhankhar");
+		sleep(1);
+
+		driver.findElement(By.id("phoneNumber")).sendKeys("0412345678");
+		sleep(1);
+
+		driver.findElement(By.id("email")).sendKeys("naman.test123@gmail.com");
+		sleep(1);
+
+		driver.findElement(By.id("password")).sendKeys("abc");
+		sleep(1);
+
+		driver.findElement(By.id("confirmPassword")).sendKeys("abc");
+		sleep(1);
+
+		driver.findElement(By.tagName("body")).click();
+		sleep(2);
+
+		driver.findElement(By.cssSelector("button[data-testid='account-action-btn']")).click();
+
+		sleep(15);
+		driver.close();
+	}
+}

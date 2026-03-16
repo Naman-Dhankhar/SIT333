@@ -1,0 +1,96 @@
+package sit707_week2;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumOperations {
+
+	public static void sleep(int sec) {
+		try {
+			Thread.sleep(sec * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void officeworks_registration_page(String url) {
+
+		System.out.println("Officeworks Step 1: Creating driver");
+		WebDriver driver = new ChromeDriver();
+
+		System.out.println("Officeworks Step 2: Maximizing window");
+		driver.manage().window().maximize();
+
+		System.out.println("Officeworks Step 3: Setting wait");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		System.out.println("Officeworks Step 4: Opening website");
+		driver.get(url);
+
+		System.out.println("Officeworks Step 5: Website opened");
+		sleep(2);
+
+		System.out.println("Officeworks Step 6: Filling first name");
+		driver.findElement(By.id("firstname")).sendKeys("Naman");
+
+		System.out.println("Officeworks Step 7: Filling last name");
+		driver.findElement(By.id("lastname")).sendKeys("Naman");
+
+		System.out.println("Officeworks Step 8: Filling phone number");
+		driver.findElement(By.id("phoneNumber")).sendKeys("0412345678");
+
+		System.out.println("Officeworks Step 9: Filling email");
+		driver.findElement(By.id("email")).sendKeys("test.a123@gmail.com");
+
+		System.out.println("Officeworks Step 10: Filling password");
+		driver.findElement(By.id("password")).sendKeys("Abcd@1234");
+
+		System.out.println("Officeworks Step 11: Filling confirm password with mismatch");
+		driver.findElement(By.id("confirmPassword")).sendKeys("Abcd@12345");
+
+		System.out.println("Officeworks Step 12: Clicking create account");
+		driver.findElement(By.cssSelector("button[data-testid='account-action-btn']")).click();
+
+		System.out.println("Officeworks Step 13: Waiting for validation result");
+		sleep(10);
+
+		System.out.println("Officeworks Step 14: Closing browser");
+		driver.quit();
+	}
+
+	public static void github_registration_page(String url) {
+
+		System.out.println("GitHub Step 1: Creating driver");
+		WebDriver driver = new ChromeDriver();
+
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		System.out.println("GitHub Step 2: Opening website");
+		driver.get(url);
+
+		sleep(2);
+
+		System.out.println("GitHub Step 3: Enter email");
+		driver.findElement(By.id("email")).sendKeys("testa.123@gmail.com");
+
+		System.out.println("GitHub Step 4: Enter password");
+		driver.findElement(By.id("password")).sendKeys("abc"); // intentionally weak
+
+		System.out.println("GitHub Step 5: Enter username");
+		driver.findElement(By.id("login")).sendKeys("testuser123");
+
+		sleep(2);
+
+		System.out.println("GitHub Step 6: Click create account");
+		driver.findElement(By.xpath("//button[contains(.,'Create account')]")).click();
+
+		sleep(10);
+
+		System.out.println("GitHub Step 7: Closing browser");
+		driver.quit();
+	}
+}

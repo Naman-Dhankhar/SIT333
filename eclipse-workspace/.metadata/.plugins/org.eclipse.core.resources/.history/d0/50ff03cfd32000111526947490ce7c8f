@@ -1,0 +1,78 @@
+package sit707_week2;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+/**
+ * This class demonstrates Selenium locator APIs to identify HTML elements.
+ * 
+ * @author Ahsan Habib
+ */
+public class SeleniumOperations {
+
+	public static void sleep(int sec) {
+		try {
+			Thread.sleep(sec * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void officeworks_registration_page(String url) {
+		// ChromeDriver path on your Mac
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+
+		// Open Chrome browser
+		System.out.println("Fire up chrome browser.");
+		WebDriver driver = new ChromeDriver();
+
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		System.out.println("Driver info: " + driver);
+
+		sleep(2);
+
+		// Load webpage
+		driver.get(url);
+
+		// First name
+		WebElement firstname = driver.findElement(By.id("firstname"));
+		firstname.sendKeys("Naman");
+
+		// Last name
+		WebElement lastname = driver.findElement(By.id("lastname"));
+		lastname.sendKeys("Dhankhar");
+
+		// Phone number
+		WebElement phoneNumber = driver.findElement(By.id("phoneNumber"));
+		phoneNumber.sendKeys("0412345678");
+
+		// Email
+		WebElement email = driver.findElement(By.id("email"));
+		email.sendKeys("naman.test123@gmail.com");
+
+		// Password - intentionally weak so account is not created
+		WebElement password = driver.findElement(By.id("password"));
+		password.sendKeys("abc");
+
+		// Confirm password
+		WebElement confirmPassword = driver.findElement(By.id("confirmPassword"));
+		confirmPassword.sendKeys("abc");
+
+		// Create account button
+		WebElement createAccountButton = driver.findElement(
+				By.cssSelector("button[data-testid='account-action-btn']"));
+		createAccountButton.click();
+
+		// Wait so you can see result and take screenshot manually
+		sleep(15);
+
+		// Close browser
+		driver.close();
+	}
+}
