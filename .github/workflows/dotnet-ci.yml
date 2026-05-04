@@ -1,4 +1,4 @@
-name: .NET CI
+name: .NET CI for 9.1P
 
 on:
   push:
@@ -21,11 +21,12 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore
+      - name: Restore 9.1P dependencies
+        run: dotnet restore 9.1P/OnTrackTDD.sln
 
-      - name: Build project
-        run: dotnet build --no-restore
+      - name: Build 9.1P project
+        run: dotnet build 9.1P/OnTrackTDD.sln --no-restore
 
-      - name: Run unit tests
-        run: dotnet test --no-build --verbosity normal
+      - name: Run 9.1P unit tests
+        run: dotnet test 9.1P/OnTrackTDD.sln --no-build --verbosity normal
+        
