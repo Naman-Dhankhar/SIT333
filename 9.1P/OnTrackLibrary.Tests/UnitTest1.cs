@@ -62,7 +62,7 @@ namespace OnTrackLibrary.Tests
 
             string result = service.GetStatusMessage("S123", "9.1P", "RandomStatus");
 
-            Assert.That(result, Is.EqualTo("Wrong message."));
+            Assert.That(result, Is.EqualTo("Invalid task status."));
         }
 
         [Test]
