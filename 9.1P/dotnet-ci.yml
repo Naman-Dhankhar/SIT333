@@ -1,0 +1,31 @@
+name: .NET CI for 9.1P
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore 9.1P dependencies
+        run: dotnet restore 9.1P/OnTrackTDD.sln
+
+      - name: Build 9.1P project
+        run: dotnet build 9.1P/OnTrackTDD.sln --no-restore
+
+      - name: Run 9.1P unit tests
+        run: dotnet test 9.1P/OnTrackTDD.sln --no-build --verbosity normal
